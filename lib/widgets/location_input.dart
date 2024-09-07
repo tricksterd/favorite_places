@@ -25,7 +25,7 @@ class _LocationInputState extends State<LocationInput> {
       return '';
     }
     final lat = _pickedLocation!.latitude;
-    final lng = _pickedLocation!.longtitude;
+    final lng = _pickedLocation!.longitude;
 
     return 'https://maps.googleapis.com/maps/api/staticmap?center=$lat,$lng&zoom=16&size=600x300&maptype=roadmap&markers=color:red%7Clabel:A%7C$lat,$lng&key=$apiKey';
   }
@@ -76,7 +76,7 @@ class _LocationInputState extends State<LocationInput> {
 
     setState(() {
       _pickedLocation =
-          PlaceLocation(latitude: lat, longtitude: lng, address: address);
+          PlaceLocation(latitude: lat, longitude: lng, address: address);
       _isGettingLocation = false;
     });
     widget.onSelectLocation(_pickedLocation!);
